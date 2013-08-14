@@ -24,6 +24,19 @@ Just add cloudbees-log4j-extras to your classpath, and let your Servlet 3+ conta
 Please note that `@WebListener` annotated classes are discovered if you enable classpath scanning with `metadata-complete="false"`
 in web.xml.
 
+
+Maven dependency
+
+```xml
+<dependency>
+    <groupId>com.cloudbees.extras</groupId>
+    <artifactId>cloudbees-log4j-extras</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+web.xml fragment with `metadata-complete="false"`
+
 ```xml
 <web-app
         xmlns="http://java.sun.com/xml/ns/javaee"
@@ -37,6 +50,18 @@ in web.xml.
 ### Embedded Log4jConfigurer JMX MBean in a Servlet 2 application
 
 Declare a `com.cloudbees.log4j.jmx.Log4jConfigurer` listener in web.xml
+
+Maven dependency
+
+```xml
+<dependency>
+    <groupId>com.cloudbees.extras</groupId>
+    <artifactId>cloudbees-log4j-extras</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+web.xml fragment with `<listener>`
 
 ```xml
 <web-app ...>
