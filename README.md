@@ -66,7 +66,7 @@ web.xml fragment with `<listener>`
 ```xml
 <web-app ...>
     <listener>
-        <listener-class>com.cloudbees.log4j.jmx.Log4jConfigurer</listener-class>
+        <listener-class>com.cloudbees.log4j.jmx.Log4jConfigurerWebListener</listener-class>
     </listener>
 </web-app>
 ```
