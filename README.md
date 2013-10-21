@@ -9,12 +9,11 @@ The Log4jConfigurer JMX MBean exposes main Log4j configuration information and o
 * ObjectName: `com.cloudbees:type=Log4jConfigurer,context=/myapp,name=Log4jConfigurer` where `context` is the application context (e.g. "/" for the root context or "/myapp" for an app with context "myapp")
 * Attributes
   * `String[] LoggerList`: list of active loggers
-  * `String Log4jConfiguration`: get Log4j effective configuration rendered in the properties format
 * Operations
  * `String getLoggerLevel(loggerName)`: logger level or `null` if logger is not defined or if the level of this logger is not defined.
  * `String getLoggerEffectiveLevel(loggerName)`: effective logger level, never `null`
+ * `String printLog4jEffectiveConfiguration()`: print the Log4j effective configuration rendered in the properties format
  * `void setLoggerLevel(loggerName, level)`: set the level of the given logger. If the given level is `null or unknown level will set logger level to `null`
- * `void reloadDefaultConfiguration()`: reload Log4j default configuration
 
 ### Embedded Log4jConfigurer JMX MBean in a Servlet 3+ application
 
@@ -31,7 +30,7 @@ Maven dependency
 <dependency>
     <groupId>com.cloudbees.extras</groupId>
     <artifactId>cloudbees-log4j-extras</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
@@ -57,7 +56,7 @@ Maven dependency
 <dependency>
     <groupId>com.cloudbees.extras</groupId>
     <artifactId>cloudbees-log4j-extras</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 

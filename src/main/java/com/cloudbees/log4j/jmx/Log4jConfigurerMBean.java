@@ -35,7 +35,9 @@ public interface Log4jConfigurerMBean {
 
     void setLoggerLevel(String loggerName, String level);
 
-    String getLog4jConfiguration();
+    /**
+     * @return log4j configuration in a properties file format
+     */
+    String printLog4jEffectiveConfiguration();
 
-    void reloadDefaultConfiguration();
 }

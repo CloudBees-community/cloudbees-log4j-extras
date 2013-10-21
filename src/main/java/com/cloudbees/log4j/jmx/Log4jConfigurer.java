@@ -141,10 +141,11 @@ public class Log4jConfigurer implements Log4jConfigurerMBean {
 
     /**
      * @return log4j configuration in a properties file format
+     *
      * @see PropertyPrinter
      */
     @Nonnull
-    public String getLog4jConfiguration() {
+    public String printLog4jEffectiveConfiguration() {
         try {
             StringWriter writer = new StringWriter();
             PropertyPrinter propertyPrinter = new PropertyPrinter(new PrintWriter(writer));
@@ -152,19 +153,6 @@ public class Log4jConfigurer implements Log4jConfigurerMBean {
             return writer.toString();
         } catch (RuntimeException e) {
             logger.warn("Exception generating log4j configuration", e);
-            throw e;
-        }
-    }
-
-    /**
-     * @see LogManager#resetConfiguration()
-     */
-    public void reloadDefaultConfiguration() {
-        logger.info("reloadDefaultConfiguration()");
-        try {
-            LogManager.resetConfiguration();
-        } catch (RuntimeException e) {
-            logger.warn("Exception resetting log4j configuration", e);
             throw e;
         }
     }
