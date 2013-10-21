@@ -24,7 +24,7 @@
 
     <artifactId>cloudbees-log4j-extras</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <groupId>com.cloudbees.extras</groupId>
     <name>cloudbees-log4j-extras</name>
